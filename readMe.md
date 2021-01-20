@@ -8,11 +8,11 @@ This is a CLI Tool for primarily developed for Deno projects and it is made in D
 * cliffy
 * fs
 ## How to Install the app
-You can name what ever the app name using -n option , make sure the `deno` is installed on your system.
+Name the as you like using `-n` option , make sure the `deno` is installed on your system.
 ```
  deno install --allow-net --allow-read --unstable -n create-deno  https://raw.githubusercontent.com/manojap/Deno-CLI-create-app-master/1.0/mod.ts
 ```
-More documentaion can be under the `Doc` please go through documentaion before make next step.
+More documentation can be found under the `Doc`.
 
 ## How to use
 On the command prompt you can use it as follows
@@ -21,7 +21,7 @@ create-deno --sample -d myproject // this will create a project in your current 
 
 create-deno -h // will get you a list cof options with sample usage
 
-* the name (create-app) depends on what name you are choosing while installation
+> the name (create-app) depends on what name you are choosing while installation
 ```
 
 ## Run the project
@@ -33,5 +33,5 @@ deno run --allow-read --allow-net --unstable --allow-write  main.ts
 Everybody welcome to join , clone the repo and have a look. 
  
 ## Escape
-More project support will added soon. Suggetions and comments are welcome.
+More project support is coming. Suggestions and comments are welcome.
 [blog](http://developerm.dev)
