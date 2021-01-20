@@ -33,5 +33,5 @@ deno run --allow-read --allow-net --unstable --allow-write  main.ts
 Everybody welcome to join , clone the repo and have a look. 
  
 ## Escape
-More project support is coming. Suggestions and comments are welcome.
+More project support is coming soon. Suggestions and comments are welcome.
 [blog](http://developerm.dev)
