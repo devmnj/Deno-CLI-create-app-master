@@ -32,7 +32,7 @@ new Command()
     .option("-mq --apimql", "API Project Using MySQL", {
         depends: ["dir"],
         action: async ({ dir }) => {
-            dir = `./ ${dir}`
+            dir = `./${dir}`
             await exists(dir).then((t) => {
                 if (t == false) { cmd.mySQLAPI(dir) } else {
                     console.log("Folder already exist!!, can't create");
@@ -44,7 +44,7 @@ new Command()
     .option("-p --apipost", "API Project Using PostgreSQL", {
         depends: ["dir"],
         action: async ({ dir }) => {
-            dir = `./ ${dir}`
+            dir = `./${dir}`
             await exists(dir).then((t) => {
                 if (t == false) { cmd.posSqlAPI(dir) } else {
                       console.log("Folder already exist!!, can't create");
@@ -56,7 +56,7 @@ new Command()
     .option("-r --routapp", "Routed app", {
         depends: ["dir"],
         action: async ({ dir}) => {
-            dir = `./ ${dir}`                      
+            dir = `./${dir}`                      
                 await exists(dir).then((t) => {
                     if (t == false) { cmd.routesProject(dir) } else {
                         console.log("\nFolder already exist!!, can't create,try another name\n");                        
@@ -68,7 +68,7 @@ new Command()
     .option("-m --monapi", "Mongo API Project", {
         depends: ["dir"],
         action: async ({ dir }) => {
-            dir = `./ ${dir}`
+            dir = `./${dir}`
             await exists(dir).then((t) => {
                 if (t == false) { cmd.mongoAPI(dir) } else {
                     console.log("\nFolder already exist!!, can't create,try another name\n");
@@ -80,7 +80,7 @@ new Command()
     .option("-l --sqlapi", "SQLite API Project", {
         depends: ["dir"],
         action: async ({ dir }) => {
-            dir = `./ ${dir}`
+            dir = `./${dir}`
             await exists(dir).then((t) => {
                 if (t == false) { cmd.sqLiteAPI(dir) } else {
                     console.log("\nFolder already exist!!, can't create,try another name\n");
@@ -92,9 +92,21 @@ new Command()
     .option("-mdb --marpi", "MariaDB API Project", {
         depends: ["dir"],
         action: async ({ dir }) => {
-            dir = `./ ${dir}`
+            dir = `./${dir}`
             await exists(dir).then((t) => {
                 if (t == false) { cmd.mariaDBAPI(dir) } else {
+                    console.log("\nFolder already exist!!, can't create,try another name\n");
+                    Deno.exit(0)
+                }
+            })
+        }
+    })
+    .option("-s --sample", "Sample app", {
+        depends: ["dir"],
+        action: async ({ dir }) => {
+            dir = `./${dir}`
+            await exists(dir).then((t) => {
+                if (t == false) { cmd.sampleApp(dir) } else {
                     console.log("\nFolder already exist!!, can't create,try another name\n");
                     Deno.exit(0)
                 }

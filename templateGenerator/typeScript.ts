@@ -2,7 +2,6 @@ const main_app =
 	"import { oak } from './deps.ts';\n" +
 	"import { dotenv } from './deps.ts';\n" +
 	"import router from './routes/routes.ts'\n" +
-	"import notFount from './404.ts'" +
 	"\n\n" +
 
 	"const env = dotenv.config()\n" +
@@ -11,14 +10,14 @@ const main_app =
 	"const HOST = env.APP_HOST  \n" +
 
 	"app.use(router.routes())\n" +
-	"app.use( notFount);\n" +
+	"app.use( ()=>{});\n" +
 	"app.listen({ port:PORT });\n" +
 	"console.log(`Server running ${HOST} on port ${PORT}`);\n";
 
 const dep =
 	"export * as dotenv from 'https://deno.land/x/dotenv/mod.ts';\n" +
 	"export * as oak from 'https://deno.land/x/oak@v6.0.1/mod.ts'; \n" +
-	"export  {DenonConfig}  from 'https://deno.land/x/denon@2.4.6/mod.ts';"
+	"export  *  from 'https://deno.land/x/denon@2.4.6/mod.ts';"
 
 const env = "PORT=5000\n" + "APP_HOST=http:\\localhost\n";
 

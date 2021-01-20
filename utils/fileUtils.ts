@@ -3,8 +3,6 @@ export default {
         try {
             let write
             write = Deno.writeTextFile(`${path}/${fn}`, cont,)
-            write = Deno.writeTextFile(`${path}/${fn}`, cont,{append:true})
-
             write.then(() => {
                 console.log(`-> ${fn}`);                
                 return true;
