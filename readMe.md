@@ -5,7 +5,7 @@ This is a CLI Tool for primarily developed for Deno projects and it is made in D
 ![Create App CLI Tool](deno-cli.png)
 
 ### Modules used
-* cliffy
+* cliffy 
 * fs
 ## How to Install the app
 Name the as you like using `-n` option , make sure the `deno` is installed on your system.
