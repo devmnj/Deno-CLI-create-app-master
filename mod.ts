@@ -1,53 +1,104 @@
-import { exists } from "./deps.ts";
-import paramerterHandlers from "./fileSystem/paramerterHandlers.ts";
-import parHadlers from "./fileSystem/paramerterHandlers.ts";
+import { Command } from "./deps.ts";
+import { exists, ensureDir } from "./deps.ts";
+import cmd from "./fileSystem/typeScriptFiles.ts";
+//Create Options and command configurations
 
-const { args } = Deno;
-const folder = args[0];
-const _arg2 = args[1];
-const _arg3 = args[2];
-
-console.log('------------------------------------------');
-console.log('---Developer:http://github.com/manojap----');
-console.log('------------------------------------------');
-
-try {
-  //Type Script routed Project
-  if (!folder) {
-    console.log('FolderName Required');
-    paramerterHandlers.Projects()
-    paramerterHandlers.Options()
-  }
-  else if (folder == '--help' || folder == '-help' || folder == 'help' || folder.length==0 ){
-    paramerterHandlers.Projects()
-    paramerterHandlers.Options()
-  }
-  else 
-    exists(`./${folder}`).then((fldr) => {
-      if (fldr == true && _arg3!='--owdir') {
-        console.log(`Project folder  ${folder} exist, try another name`);
-        return;
-      } else {
-        // console.log(`_arg3=${_arg3}`);
-        if (_arg3 || _arg3 == undefined) {
-          paramerterHandlers.paramFilter(_arg3, folder).then((f: any) => {
-            if (f != false) {
-              // console.log(`_arg2=${_arg2}`);
-              if (_arg2 || _arg2 == undefined) {
-                paramerterHandlers.paramCmd(_arg2, folder).then(() => {
-                  console.log('....\n');
-                })
-              }
-            }
-          })
+new Command()
+    .name('create-app')
+    .version('0.0.1')
+    .description('Deno Project builder')
+    .example('Deno route and controller project',"create-app --app -d routed-site")
+    .option("-d --dir <dir:string>", "Project Directory", {
+        required: true,
+        action: async ({xdir, dir }) => {
+      
+            await exists(`./${dir}`).then((t) => {
+                if (t == true) { xdir = true }
+            })
         }
-
-      }
+    }
+    ).option("-x --xdir <xdir:boolean>", "Test", {
+        default: false,
     })
-  
-} catch (error) {
-  console.log('Error:' + error);
-}
-
-
-
+ 
+    .option("-a --about", "About the program", {
+        standalone: true,
+        action: () => {
+            console.log('\nThis is a opensource tool for developing deno apps\n');
+            console.log('\nDeveloped by Manoj, http://github.com/manojap \n');
+            Deno.exit(0);
+        },
+    })
+    .option("-mq --apimql", "API Project Using MySQL", {
+        depends: ["dir"],
+        action: async ({ dir }) => {
+            dir = `./ ${dir}`
+            await exists(dir).then((t) => {
+                if (t == false) { cmd.mySQLAPI(dir) } else {
+                    console.log("Folder already exist!!, can't create");
+                    Deno.exit(0)
+                }
+            })
+        }
+    })
+    .option("-p --apipost", "API Project Using PostgreSQL", {
+        depends: ["dir"],
+        action: async ({ dir }) => {
+            dir = `./ ${dir}`
+            await exists(dir).then((t) => {
+                if (t == false) { cmd.posSqlAPI(dir) } else {
+                      console.log("Folder already exist!!, can't create");
+                      Deno.exit(0)
+                 }
+            })
+        }
+    })
+    .option("-r --routapp", "Routed app", {
+        depends: ["dir"],
+        action: async ({ dir}) => {
+            dir = `./ ${dir}`                      
+                await exists(dir).then((t) => {
+                    if (t == false) { cmd.routesProject(dir) } else {
+                        console.log("\nFolder already exist!!, can't create,try another name\n");                        
+                        Deno.exit(0)
+                    }
+                })
+            }            
+        })
+    .option("-m --monapi", "Mongo API Project", {
+        depends: ["dir"],
+        action: async ({ dir }) => {
+            dir = `./ ${dir}`
+            await exists(dir).then((t) => {
+                if (t == false) { cmd.mongoAPI(dir) } else {
+                    console.log("\nFolder already exist!!, can't create,try another name\n");
+                    Deno.exit(0)
+                }
+            })
+        }
+    })
+    .option("-l --sqlapi", "SQLite API Project", {
+        depends: ["dir"],
+        action: async ({ dir }) => {
+            dir = `./ ${dir}`
+            await exists(dir).then((t) => {
+                if (t == false) { cmd.sqLiteAPI(dir) } else {
+                    console.log("\nFolder already exist!!, can't create,try another name\n");
+                    Deno.exit(0)
+                }
+            })
+        }
+    })
+    .option("-mdb --marpi", "MariaDB API Project", {
+        depends: ["dir"],
+        action: async ({ dir }) => {
+            dir = `./ ${dir}`
+            await exists(dir).then((t) => {
+                if (t == false) { cmd.mariaDBAPI(dir) } else {
+                    console.log("\nFolder already exist!!, can't create,try another name\n");
+                    Deno.exit(0)
+                }
+            })
+        }
+    })
+    .parse(Deno.args)

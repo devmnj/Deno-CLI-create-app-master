@@ -10,8 +10,8 @@ export default {
                 console.log("Project Name required!")
                 return;
             }
-            console.log("Project Type: Basic Routes and Controllers" );
-            console.log("Platform    : Deno");
+            console.log("\nProject Type: Basic Routes and Controllers" );
+            console.log("Platform    : Deno\n");
 
             ensureDir(dir).then(() => {
                 console.log("-> Project Folder");
@@ -34,34 +34,34 @@ export default {
         }
     },
     async cliTool(dir: string) {
-        console.log("Project Type: CLI Tools");
-        console.log("Platform    : Deno");
-        console.log('\ncoming Soon');
+        console.log("\nProject Type: CLI Tools");
+        console.log("Platform    : Deno\n");
+        console.log('coming Soon\n');
     },
-    async prosSqlAPI(dir: string) {
-        console.log("Project Type: ProsgresSQL API ");
-        console.log("Platform    : Deno");
-        console.log('\ncoming Soon');
+    async posSqlAPI(dir: string) {
+        console.log("\nProject Type: ProsgresSQL API ");
+        console.log("Platform    : Deno\n");
+        console.log('coming Soon\n');
     },
     async mongoAPI(dir: string){
-        console.log("Project Type:Mongo API");
-        console.log("Platform    : Deno");
-        console.log('\ncoming Soon');        
+        console.log("\nProject Type:Mongo API");
+        console.log("Platform    : Deno\n");
+        console.log('coming Soon\n');        
     },
     async mySQLAPI(dir: string) {
-        console.log("Project Type: MySQL API");
-        console.log("Platform    : Deno");
-        console.log('\ncoming Soon');
+        console.log("\nProject Type: MySQL API");
+        console.log("Platform    : Deno\n");
+        console.log('coming Soon\n');
     },
     async mariaDBAPI(dir: string) {
-        console.log("Project Type: MariaDB API");
-        console.log("Platform    : Deno");
-        console.log('\ncoming Soon');
+        console.log("\nProject Type: MariaDB API");
+        console.log("Platform    : Deno\n");
+        console.log('coming Soon\n');
     },
     async sqLiteAPI(dir: string) {
-        console.log("Project Type: SQLite API");
-        console.log("Platform    : Deno");
-        console.log('\ncoming Soon');
+        console.log("\nProject Type: SQLite API");
+        console.log("Platform    : Deno\n");
+        console.log('coming Soon\n');
     }
 
 }

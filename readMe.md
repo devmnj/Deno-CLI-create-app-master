@@ -2,6 +2,10 @@
 
 This is a CLI Tool for primarily Deno projects made in Deno. The tool will generate components structure and Project structure for fast coding.
 
+### Modules used
+* cliffy
+* fs
+
 ## Projects
 Following Projects are available 
 
