@@ -1,33 +1,17 @@
 # About
 
-This is a CLI Tool for primarily Deno projects made in Deno. The tool will generate components structure and Project structure for fast coding.
+This is a CLI Tool for primarily developed for Deno projects and it is made in Deno. The tool will generate components structure and Project structure for fast coding.
+
+![Create App CLI Tool](deno-cli.png)
 
 ### Modules used
 * cliffy
 * fs
-
-## Projects
-Following Projects are available 
-
-> ['--apiMongo', '--apimySql', '--apiProsgres', '--apiProsgres', '--app']
-
-## Options
-
->['--owdir Overwrite Directory', '--help Help ']
-
-## How to use
-
-``` 
-create-app-comp --app // will generate basic routed Deno app structure
-
-create-app-comp --help  // will get you help 
-```
-
-## Installing CLI Tool
-You can install this CLI tool or clone the project. Deno allow use to install it from the repo
-```
-deno install 
-```
+## How to
+More documentaion can be under the `Doc` please go through documentaion before make next step.
+## Open source
+Everybody welcome to join , clone the repo and have a look.
+ 
 ## Escape
 Suggetions and comments are welcome. 
 [blog](http://developerm.dev)
