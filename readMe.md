@@ -2,7 +2,7 @@
 
 This is a CLI Tool for primarily developed for Deno projects and it is made in Deno. The tool will generate components structure and Project structure for fast coding.
 
-![Create App CLI Tool](deno-cli.png)
+![Create App CLI Tool](deno-cli.png) 
 
 ### Modules used
 * cliffy 
