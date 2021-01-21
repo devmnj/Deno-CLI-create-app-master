@@ -1,4 +1,4 @@
-name: Test Deno Module
+name: Create App Master
 
 on:
   push:
