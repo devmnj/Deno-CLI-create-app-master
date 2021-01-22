@@ -75,6 +75,9 @@ const denon = "import { DenonConfig } from './deps.ts';\n" +
 	"};\n" +
 	"export default config;"
 
+	 
+
+
 export default {
 	getMianContentTs() { return main_app },
 	getDepsContentTs() { return dep },
