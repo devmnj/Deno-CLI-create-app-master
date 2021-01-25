@@ -27,7 +27,7 @@ create-deno -h // will get you a list cof options with sample usage
 ## Run the project
 After the creation of project you can `cd` into the directory and run the project as (if you are a beginner it will be helpfull)
 ```
-deno run --allow-read --allow-net --unstable --allow-write  main.ts
+deno run --allow-read --allow-net --unstable --allow-write  mod.ts
 ```
 ## Open source
 Everybody welcome to join , clone the repo and have a look. 

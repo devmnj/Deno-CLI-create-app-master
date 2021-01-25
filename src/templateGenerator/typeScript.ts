@@ -58,31 +58,12 @@ const routes =
 	"router.get('/about', Controller.index)\n" +
 	"router.get('/', Controller.index)\n export default router;";
 
-const denon = "import { DenonConfig } from './deps.ts';\n" +
-	"const config: DenonConfig = {\n" +
-	"scripts: {\n" +
-	" start: {\n" +
-	"cmd: 'deno run main.ts',\n" +
-	" desc: 'run my main.ts file',\n" +
-	"},\n" +
-	"},\n" +
-	" 'allow': [\n" +
-	" 'run',\n" +
-	" 'read',\n" +
-	" 'write',\n" +
-	"'plugin'\n" +
-	"]\n" +
-	"};\n" +
-	"export default config;"
-
-	 
 
 
 export default {
 	getMianContentTs() { return main_app },
 	getDepsContentTs() { return dep },
 	getEnvContentTs() { return env },
-	getDenonContentTs() { return denon },
 	get404ContentTs() { return fnf },
 	getRouteContentTs() { return routes },
 	getCotrlrContentTs() { return controller },

@@ -18,7 +18,7 @@ export default {
                 fileIO.CreateFIle(dir, "main.ts", TSContent.getMianContentTs())
                 fileIO.CreateFIle(dir, 'deps.ts', TSContent.getDepsContentTs())
                 fileIO.CreateFIle(dir, '.env', TSContent.getEnvContentTs())
-                fileIO.CreateFIle(dir, 'scripts.config.ts', TSContent.getDenonContentTs())
+ 
                 fileIO.CreateFIle(dir, 'readMe.md', TSContent.getReadMeContentTs())
                 ensureDir(`${dir}/routes`).then(() => {
                     fileIO.CreateFIle(`${dir}/routes`, "routes.ts", TSContent.getRouteContentTs())
@@ -43,7 +43,6 @@ export default {
                 fileIO.CreateFIle(dir, "main.ts", TSContent.getMianContentTs())
                 fileIO.CreateFIle(dir, 'deps.ts', TSContent.getDepsContentTs())
                 fileIO.CreateFIle(dir, '.env', TSContent.getEnvContentTs())
-                fileIO.CreateFIle(dir, 'scripts.config.ts', TSContent.getDenonContentTs())
                 fileIO.CreateFIle(dir, 'readMe.md', TSContent.getReadMeContentTs())
                 ensureDir(`${dir}/routes`).then(() => {
                     fileIO.CreateFIle(`${dir}/routes`, "routes.ts", TSContent.getRouteContentTs())
