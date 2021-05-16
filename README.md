@@ -34,4 +34,4 @@ Everybody welcome to join , clone the repo and have a look.
  
 ## Escape
 More project support coming soon. Suggestions and comments are welcome.
-[blog](http://developerm.dev)
+[blog](https://javascriptsu.wordpress.com/)
